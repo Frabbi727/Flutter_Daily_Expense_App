@@ -1,12 +1,11 @@
+import './widgets/user_transaction.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp( MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -17,13 +16,36 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  // const MyHomePage({Key? key}) : super(key: key);
+  // late String titleInput;
+  // late String amountInput;
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Flutter App'),),
-      body: Center(child: Text('Widgets Playground'),),
+      appBar: AppBar(
+        title: Text('Flutter App'),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              child: Card(
+                color: Colors.blue,
+                elevation: 5,
+                child: Text('Chart !'),
+              ),
+            ),
+            UserTransaction(),
+          ],
+        ),
+      ),
     );
   }
 }
+
+
+//Start from 21
